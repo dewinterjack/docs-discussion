@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "docs-discussion"
+version = "0.1.0"
+description = "Discuss documentation with LLMs to save time"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "docs_discussion"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.214"
+openai = "^0.27.8"
+promptlayer = "^0.1.90"
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
