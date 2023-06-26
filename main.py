@@ -16,7 +16,7 @@ def main():
   chat_prompt = create_prompt()
   messages = chat_prompt.format_prompt(name="YOUR_NAME").to_messages()
 
-  model = PromptLayerChatOpenAI(model_name="gpt-3.5-turbo", pl_tags=["langchain"])
+  model = PromptLayerChatOpenAI(model_name="gpt-3.5-turbo", pl_tags=["docs-discussion"])
   output = model(messages)
   print(output)
 
