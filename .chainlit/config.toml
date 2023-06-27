@@ -9,17 +9,17 @@ public = true
 #id = ""
 
 # Whether to enable telemetry (default: true). No personal data is collected.
-enable_telemetry = true
+enable_telemetry = false
 
 # List of environment variables to be provided by each user to use the app.
 user_env = []
 
 [UI]
 # Name of the app and chatbot.
-name = "Chatbot"
+name = "docbot"
 
 # Description of the app and chatbot. This is used for HTML tags.
-# description = ""
+# description = "Find relavant documentation and discuss it."
 
 # The default value for the expand messages settings.
 default_expand_messages = false
