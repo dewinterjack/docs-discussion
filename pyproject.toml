@@ -14,6 +14,7 @@ promptlayer = "^0.1.90"
 bs4 = "^0.0.1"
 markdownify = "^0.11.6"
 requests = "^2.31.0"
+chainlit = "^0.4.101"
 
 [tool.poetry.group.dev.dependencies]
 python-dotenv = "^1.0.0"
