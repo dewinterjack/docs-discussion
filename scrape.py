@@ -8,10 +8,9 @@ def scrape_website(start_url):
     visited = set()
     to_visit = {start_url}
     
-    # create the directory to store the markdown files
-    directory = "data"
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    base_directory = "data"
+    if not os.path.exists(base_directory):
+        os.makedirs(base_directory)
 
     while to_visit:
         url = to_visit.pop()
@@ -32,13 +31,17 @@ def scrape_website(start_url):
 
         markdown_text = "\n".join(md(str(tag)) for tag in contents)
 
-        # use os.path.basename() to get the last part of the url
-        file_name = os.path.basename(urlparse(url).path)
+        # use the path from the URL to create directories
+        url_path = urlparse(url).path
+        directory = os.path.join(base_directory, *url_path.split('/')[1:-1])
+        os.makedirs(directory, exist_ok=True)
+
+        file_name = os.path.basename(url_path)
         if file_name == "":
             file_name = "index"
-        file_name = os.path.join(directory, file_name + '.md')
+        file_path = os.path.join(directory, file_name + '.md')
         
-        with open(file_name, 'w') as f:
+        with open(file_path, 'w') as f:
             f.write(markdown_text)
 
         # Collect links from the sidebar
