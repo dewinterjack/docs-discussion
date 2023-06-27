@@ -21,6 +21,8 @@ def scrape_website(start_url):
 
         visited.add(url)
         response = requests.get(url)
+        url = response.url
+
         soup = BeautifulSoup(response.text, 'html.parser')
 
         content_tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
@@ -47,4 +49,8 @@ def scrape_website(start_url):
                 if absolute_link not in visited:
                     to_visit.add(absolute_link)
 
-scrape_website('https://docs.langchain.com/docs/')
+if __name__ == '__main__':
+    try:
+        scrape_website('https://python.langchain.com/docs/get_started/introduction')
+    except KeyboardInterrupt:
+        pass
