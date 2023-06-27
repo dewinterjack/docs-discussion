@@ -40,10 +40,11 @@ def scrape_website(start_url):
             f.write(markdown_text)
 
         # Collect links from the sidebar
-        sidebar = soup.find_all('aside')  
-        for link in sidebar[0].find_all('a', href=True):
-            absolute_link = urljoin(url, link['href'])
-            if absolute_link not in visited:
-                to_visit.add(absolute_link)
+        sidebar = soup.find_all('aside')
+        if sidebar:
+            for link in sidebar[0].find_all('a', href=True):
+                absolute_link = urljoin(url, link['href'])
+                if absolute_link not in visited:
+                    to_visit.add(absolute_link)
 
 scrape_website('https://docs.langchain.com/docs/')
