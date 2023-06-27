@@ -1,9 +1,10 @@
 This project uses [poetry](https://python-poetry.org/docs/) for dependency
 management.
 
-Install dependencies:
+Install dependencies in a virtual environment:
 
 ```
+poetry shell
 poetry install
 ```
 
