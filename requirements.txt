@@ -1,0 +1,8 @@
+langchain
+openai
+promptlayer
+bs4
+markdownify
+requests
+chainlit
+python-dotenv
