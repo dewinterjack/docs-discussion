@@ -5,4 +5,5 @@ bs4
 markdownify
 requests
 chainlit
+unstructured
 python-dotenv
