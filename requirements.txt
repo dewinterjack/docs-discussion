@@ -7,3 +7,5 @@ requests
 chainlit
 unstructured
 python-dotenv
+tiktoken
+faiss-cpu
