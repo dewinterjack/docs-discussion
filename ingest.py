@@ -15,8 +15,7 @@ def ingest_docs():
   embeddings = OpenAIEmbeddings()
   vectorstore = FAISS.from_documents(chunked_docs, embeddings)
 
-  with open("vectorstore.pkl", "wb") as f:
-     pickle.dump(vectorstore, f)
+  vectorstore.save_local("faiss_index")
 
 if __name__ == "__main__":
     load_dotenv()

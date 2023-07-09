@@ -3,4 +3,4 @@ __pycache__/
 venv/
 data/
 *.db
-vectorstore.pkl
+faiss_index/
